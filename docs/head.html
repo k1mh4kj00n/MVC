@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src = "/resource/monitor/monitor.js"></script>
+    <script src = "/resource/monitor/ms.js"></script>
+    <script src = "/resource/develop/develop.js"></script>
+    <script src = "/resource/develop/test.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"> </script>
+
+</head>
+
+<style>
+    footer {
+        background: darkgray;
+        height: 5px;
+    }
+    main{
+        background: #d9e0e7;
+    }
+    body{
+        background-color: #707478;
+
+    }
+    .navbar{
+        background-color: #2d353c;
+        height: 1300px;
+        border-radius: 1px;
+    }
+    .nav li a{
+        background-color:red;
+    }
+    .nav .active a{
+        background-color:orange ;
+    }
+    .table-dark td{
+        border: 1px solid #198753;
+    }
+    .table-dark th{
+        border: 1px solid #198753;
+        font-weight: bold;
+    }
+    .state-block{
+        width: 24%;
+        height: 130px;
+        border-radius: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 5px !important;
+    }
+    .search-block{
+        margin-top: 9px !important;
+    }
+    .status-block{
+        margin-top: 9px !important;
+        padding: 0;
+    }
+
+    .progress{
+        height: 10px;
+    }
+    .progress-bar{
+        font-size: 0.5em;
+    }
+    .title{
+        font-size: 24px;
+        margin-bottom: 5px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .migration-number{
+        font-size: 8px;
+        margin-bottom: 2px;
+        font-weight: 700;
+        letter-spacing: 0px;
+    }
+    .contentbox-title{
+        font-size: 25px;
+        line-height: 22px;
+        color: #fff;
+        font-weight: 500 ;
+        margin: 0px 10px 0px;
+    }
+    .content-title{
+        font-size: 30px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        font-weight: 420;
+        letter-spacing: 0px;
+
+    }
+    small{
+        font-size: 30%;
+        font-weight: normal;
+        color: #6a7786;
+    }
+    .nn{
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 8px;
+        margin-bottom: 0;
+        list-style: none;
+    }
+    .at {
+        padding: 7px 20px;
+        line-height: 20px;
+        color: #a8acb1;
+        display: block;
+        text-decoration: none;
+    }
+    h3 {
+        margin-top: 10px;
+    }
+    .box-title{
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 500 ;
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-left: 10px;
+        color: #fff;
+        opacity: 0.9;
+    }
+
+    header {
+        background: #fff;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .state-content{
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500 ;
+        margin-top: 0px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 5px;
+    }
+    .state-title{
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 500 ;
+        margin-top: 10px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 0px;
+    }
+
+    .table-title > th{
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 500 ;
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-left: 10px;
+        color: #fff;
+        opacity: 1;
+
+    }
+    .table-content > td{
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 500 ;
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-left: 10px;
+        color: #fff;
+        opacity: 1;
+
+    }
+
+    li{
+        color: #92989b;
+        font-size: 13px;
+
+    }
+    .nav-title a{
+        cursor:pointer;
+    }
+    .nav-title > ul{
+        display: none;
+    }
+    .nav-title {
+        margin-bottom: 5px;
+    }
+    .coll > input{
+        margin:5px;
+    }
+    .circle_red{
+        width:30px;
+        height:30px;
+        border-radius: 50px;
+        margin:0 auto;
+    }
+
+    .circle_blue{
+        width:30px;
+        height:30px;
+        border-radius: 50px;
+        margin:0 auto;
+    }
+</style>
